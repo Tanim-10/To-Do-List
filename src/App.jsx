@@ -60,13 +60,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="bg-[#A08963] text-white m-4 p-4 rounded-2xl w-1/2 mx-auto">
+      <div className="bg-[#A08963] text-white p-4 md:rounded-2xl w-full max-w-2xl md:mt-5 mx-auto min-h-[calc(100vh-4rem)]">
+        <h1 className='text-center text-3xl font-bold'>Check it. Do it. Done.</h1>
         <div className="addtodo mb-4">
           <h2 className='font-bold mb-1'>Add a ToDo</h2>
           <input 
             onChange={handlechange} 
             value={todo} 
-            className='text-black w-96 h-7 rounded-2xl px-2' 
+            className='text-black w-3/4 h-7 rounded-2xl px-2' 
             type="text" 
           />
           <button 
@@ -79,7 +80,7 @@ function App() {
         <input onChange={togglefinish} type="checkbox" name="" checked={showfinished} id="" /> Show Finished
         <h2 className='font-bold'>Your ToDo(s)</h2>
         <div className="todos">
-          {todos.length === 0 && <div className='mx-32 animate-pulse text-2xl'>No ToDos</div>}
+          {todos.length === 0 && <div className=' animate-pulse text-2xl italic'>Zero tasks. You’re either a genius or in denial.</div>}
           {todos.map((item) => {
             return (showfinished || !item.isCompleted) && <div key={item.id} className="todo my-2 flex w-full justify-between">
               <div className='flex gap-4'>
